@@ -9,7 +9,10 @@ import { fetcher } from "../../config/config";
 const MovieList = ({ type = "now_playing" }) => {
   const [movies, setMovies] = useState([]);
   const { data, error, isLoading } = useSWR(
-    `https://api.themoviedb.org/3/movie/${type}?api_key=dae28cb2a8dbebf72e0eacb8a51b947a`,
+    "curl --request GET \
+  --url 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYWUyOGNiMmE4ZGJlYmY3MmUwZWFjYjhhNTFiOTQ3YSIsInN1YiI6IjY1OTc5Njc1NjBjNTFkMzM5ODk3ODdkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xiYRXP3RsG-2qXfQaSZIT5yFTOMP0xIGXFqcf1sWSgs' \
+  --header 'accept: application/json'",
     fetcher
   );
 

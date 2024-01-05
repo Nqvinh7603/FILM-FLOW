@@ -3,7 +3,7 @@ import React from "react";
 const MovieCards = ({ item }) => {
   const { title, vote_average, release_date, poster_path } = item;
   return (
-    <div className=" text-white flex flex-col movie-card rounded-lg p-3 bg-slate-800 h-full select-none">
+    <div className=" text-white flex flex-col movie-card rounded-lg p-3 bg-slate-800 h-full">
       <img
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         alt=""

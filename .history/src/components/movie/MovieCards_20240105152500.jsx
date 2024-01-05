@@ -3,7 +3,7 @@ import React from "react";
 const MovieCards = ({ item }) => {
   const { title, vote_average, release_date, poster_path } = item;
   return (
-    <div className=" text-white flex flex-col movie-card rounded-lg p-3 bg-slate-800 h-full select-none">
+    <div className=" text-white flex flex-col movie-card rounded-lg p-3 bg-slate-800 h-full">
       <img
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         alt=""
@@ -15,7 +15,7 @@ const MovieCards = ({ item }) => {
           <span>{new Date(release_date).getFullYear()}</span>
           <span>{vote_average}</span>
         </div>
-        <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full mt-auto">
+        <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
           Xem phim
         </button>
       </div>

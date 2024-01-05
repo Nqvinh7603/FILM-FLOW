@@ -51,7 +51,7 @@ function App() {
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
           Thịnh hành
         </h2>
-        <MovieList type="popular"></MovieList>
+        <MovieList></MovieList>
       </section>
     </Fragment>
   );
