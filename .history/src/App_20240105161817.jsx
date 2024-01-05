@@ -49,7 +49,7 @@ function App() {
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
-          Sắp phát hành
+          Thịnh hành
         </h2>
         <MovieList type="upcoming"></MovieList>
       </section>
