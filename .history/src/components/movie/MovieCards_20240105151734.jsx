@@ -5,7 +5,7 @@ const MovieCards = ({ item }) => {
   return (
     <div className=" text-white movie-card rounded-lg p-3 bg-slate-800">
       <img
-        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+        src=`https://image.tmdb.org/t/p/w500`
         alt=""
         className="w-full h-[250px] object-cover rounded-lg mb-5"
       />
