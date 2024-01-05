@@ -8,10 +8,8 @@ function App() {
         <span className="text-primary">Trang chủ</span>
         <span>Phim</span>
       </header>
-      <section className="banner h-[400px] page-container">
-        <div className="h-full w-full rounded-lg relative ">
-          <img src="" alt="" />
-        </div>
+      <section className="banner h-[300px] page-container">
+        <div className="h-full w-full rounded-lg bg-white "></div>
       </section>
     </Fragment>
   );

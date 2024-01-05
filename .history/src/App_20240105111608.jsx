@@ -9,9 +9,7 @@ function App() {
         <span>Phim</span>
       </header>
       <section className="banner h-[400px] page-container">
-        <div className="h-full w-full rounded-lg relative ">
-          <img src="" alt="" />
-        </div>
+        <div className="h-full w-full rounded-lg relative "></div>
       </section>
     </Fragment>
   );

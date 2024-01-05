@@ -4,10 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ["DM Sans", "sans-serif"],
-      },
-      colors: {
-        primary: "#3B82F6",
+        body: ["DM Sans"],
       },
     },
   },
