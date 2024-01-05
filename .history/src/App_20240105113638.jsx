@@ -10,9 +10,9 @@ function App() {
       </header>
       <section className="banner h-[400px] page-container">
         <div className="h-full w-full rounded-lg relative ">
-          <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] rounded-lg"></div>
+          <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)]"></div>
           <img
-            src="https://media.istockphoto.com/id/496261146/photo/young-man-at-sunset.webp?b=1&s=170667a&w=0&k=20&c=Wp4It6h4BePnEfaZbq18-XzN8IfPLmGfoyFxr6f67cc="
+            src="hhttps://media.istockphoto.com/id/496261146/photo/young-man-at-sunset.webp?b=1&s=170667a&w=0&k=20&c=Wp4It6h4BePnEfaZbq18-XzN8IfPLmGfoyFxr6f67cc=ttps://media.istockphoto.com/id/1009803562/photo/group-of-people-on-peak-mountain-climbing-helping-team-work-travel-trekking-success-business.webp?b=1&s=170667a&w=0&k=20&c=DcMAuJQQeqBwibV-VKqisNb1J-byzW6EEIOJ9XOyoNI="
             alt=""
             className="w-full h-full object-cover rounded-lg"
           />

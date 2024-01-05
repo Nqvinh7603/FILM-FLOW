@@ -10,28 +10,18 @@ function App() {
       </header>
       <section className="banner h-[400px] page-container">
         <div className="h-full w-full rounded-lg relative ">
-          <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] rounded-lg"></div>
           <img
-            src="https://media.istockphoto.com/id/496261146/photo/young-man-at-sunset.webp?b=1&s=170667a&w=0&k=20&c=Wp4It6h4BePnEfaZbq18-XzN8IfPLmGfoyFxr6f67cc="
+            src="https://images.unsplash.com/photo-1561816544-21ecbffa09a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3Dto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZlbmdlcnN8ZW58MHx8MHx8fDA%3D"
             alt=""
             className="w-full h-full object-cover rounded-lg"
           />
           <div className="absolute left-5 bottom-5 w-full text-white">
             <h2 className="font-bold text-3xl mb-5">Phim: ABCD</h2>
-            <div className="flex items-center gap-x-3 mb-8">
-              <span className="px-4 py-2 border border-white rounded-md">
-                Abc
-              </span>
-              <span className="px-4 py-2 border border-white rounded-md">
-                Bcd
-              </span>
-              <span className="px-4 py-2 border border-white rounded-md">
-                Def
-              </span>
+            <div className="flex items-center gap-x-3">
+              <span className="p-4 border border-white ">Abc</span>
+              <span>Bcd</span>
+              <span>Def</span>
             </div>
-            <button className="py-3 px-6 rounded-lg bg-primary text-white font-medium">
-              Xem phim
-            </button>
           </div>
         </div>
       </section>
