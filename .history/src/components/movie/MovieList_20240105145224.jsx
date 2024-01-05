@@ -12,7 +12,7 @@ const MovieList = () => {
   );
   useEffect(() => {
     if (data && data.results) setMovies(data.results);
-  }, [data]);
+  }, []);
   console.log(movies);
   return (
     <div className="movie-list">
