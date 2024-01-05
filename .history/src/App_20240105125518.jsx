@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MovieList from "./components/movie/MovieList";
+import { NavLink } from "react-router-dom";
 function App() {
   return (
     // eslint-disable-next-line react/jsx-no-undef
@@ -39,7 +39,7 @@ function App() {
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
           Xem ngay
         </h2>
-        <MovieList></MovieList>
+        <div className="movie-list grid grid-cols-4 gap-10"></div>
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">

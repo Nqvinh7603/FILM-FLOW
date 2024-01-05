@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import "swiper/scss";
 import MovieList from "./components/movie/MovieList";
 function App() {
   return (

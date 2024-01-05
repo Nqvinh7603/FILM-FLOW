@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MovieList from "./components/movie/MovieList";
+import "swiper/scss";
 function App() {
   return (
     // eslint-disable-next-line react/jsx-no-undef
@@ -39,7 +39,31 @@ function App() {
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
           Xem ngay
         </h2>
-        <MovieList></MovieList>
+        <div className="movie-list">
+          <Swiper grabCursor={"true"} spaceBetween={40} slidesPerView={"auto"}>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+            <SwiperSlide>
+              <MovieCards></MovieCards>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
