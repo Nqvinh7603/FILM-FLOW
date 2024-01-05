@@ -35,7 +35,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="movies-layout page-container pb-20">
+      <section className="movies-layout page-container pb-10">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
           Xem ngay
         </h2>
@@ -47,57 +47,10 @@ function App() {
               className="w-full h-[250px] object-cover rounded-lg mb-5"
             />
             <h3 className="text-xl font-bold mb-3">Bố già</h3>
-            <div className="flex items-center justify-between text-sm opacity-50 mb-10">
+            <div className="flex items-center justify-between text-sm text-opacity-50">
               <span>2020</span>
               <span>10.0</span>
             </div>
-            <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
-              Xem phim
-            </button>
-          </div>
-        </div>
-      </section>
-      <section className="movies-layout page-container pb-20">
-        <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
-          Đánh giá cao nhất
-        </h2>
-        <div className="movie-list grid grid-cols-4 gap-10">
-          <div className=" text-white movie-card rounded-lg p-3 bg-slate-800">
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGUzOWMyYjAtYTE3OS00Njc0LWJiMTEtMDNiNjA0MTI1N2E3XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg"
-              alt=""
-              className="w-full h-[250px] object-cover rounded-lg mb-5"
-            />
-            <h3 className="text-xl font-bold mb-3">Bố già</h3>
-            <div className="flex items-center justify-between text-sm opacity-50 mb-10">
-              <span>2020</span>
-              <span>10.0</span>
-            </div>
-            <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
-              Xem phim
-            </button>
-          </div>
-        </div>
-      </section>
-      <section className="movies-layout page-container pb-20">
-        <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
-          Xu hướng
-        </h2>
-        <div className="movie-list grid grid-cols-4 gap-10">
-          <div className=" text-white movie-card rounded-lg p-3 bg-slate-800">
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMGUzOWMyYjAtYTE3OS00Njc0LWJiMTEtMDNiNjA0MTI1N2E3XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg"
-              alt=""
-              className="w-full h-[250px] object-cover rounded-lg mb-5"
-            />
-            <h3 className="text-xl font-bold mb-3">Bố già</h3>
-            <div className="flex items-center justify-between text-sm opacity-50 mb-10">
-              <span>2020</span>
-              <span>10.0</span>
-            </div>
-            <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
-              Xem phim
-            </button>
           </div>
         </div>
       </section>

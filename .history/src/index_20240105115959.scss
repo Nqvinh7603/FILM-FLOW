@@ -8,7 +8,11 @@
 }
 @layer components {
   .page-container {
-    max-width: 1280px;
-    @apply mx-auto;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-container-fluid {
+    max-width: 1440px;
   }
 }

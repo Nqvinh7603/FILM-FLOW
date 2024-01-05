@@ -81,7 +81,7 @@ function App() {
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
-          Xu hướng
+          Đánh giá cao nhất
         </h2>
         <div className="movie-list grid grid-cols-4 gap-10">
           <div className=" text-white movie-card rounded-lg p-3 bg-slate-800">
