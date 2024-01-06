@@ -24,9 +24,9 @@ function App() {
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
-          Thịnh hành
+          Sắp phát hành
         </h2>
-        <MovieList type="popular"></MovieList>
+        <MovieList type="upcoming"></MovieList>
       </section>
     </Fragment>
   );

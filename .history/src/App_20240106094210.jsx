@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import MovieList from "./components/movie/MovieList";
-import Banner from "./components/banner/Banner";
 function App() {
   return (
     // eslint-disable-next-line react/jsx-no-undef
@@ -9,7 +8,6 @@ function App() {
         <span className="text-primary">Trang chủ</span>
         <span>Phim</span>
       </header>
-      <Banner></Banner>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
           Xem ngay
@@ -24,9 +22,9 @@ function App() {
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-10 text-3xl font-bold ">
-          Thịnh hành
+          Sắp phát hành
         </h2>
-        <MovieList type="popular"></MovieList>
+        <MovieList type="upcoming"></MovieList>
       </section>
     </Fragment>
   );
