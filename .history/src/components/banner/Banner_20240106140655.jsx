@@ -10,7 +10,7 @@ const Banner = () => {
   );
   const movies = data?.results || [];
   return (
-    <section className="banner h-[500px] page-container mb-10 overflow-hidden">
+    <section className="banner h-[400px] page-container mb-10 overflow-hidden">
       <Swiper grapCursor="true" slidesPerView={"auto"}>
         {movies.length > 0 &&
           movies.map((item) => (
@@ -30,7 +30,7 @@ function BannerItem({ item }) {
       <img
         src={`https://image.tmdb.org/t/p/original/${poster_path}`}
         alt=""
-        className="w-full h-full object-cover rounded-lg "
+        className="w-full h-full object-cover rounded-lg object-top"
       />
       <div className="absolute left-5 bottom-5 w-full text-white">
         <h2 className="font-bold text-3xl mb-5">{title}</h2>

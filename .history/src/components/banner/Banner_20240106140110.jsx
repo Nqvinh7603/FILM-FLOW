@@ -10,7 +10,7 @@ const Banner = () => {
   );
   const movies = data?.results || [];
   return (
-    <section className="banner h-[500px] page-container mb-10 overflow-hidden">
+    <section className="banner h-[400px] page-container mb-10 overflow-hidden">
       <Swiper grapCursor="true" slidesPerView={"auto"}>
         {movies.length > 0 &&
           movies.map((item) => (
@@ -23,17 +23,17 @@ const Banner = () => {
   );
 };
 function BannerItem({ item }) {
-  const { title, poster_path } = item;
+  const { title, vote_average, release_date, poster_path } = item;
   return (
     <div className="h-full w-full rounded-lg relative ">
       <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] rounded-lg  "></div>
       <img
-        src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         alt=""
-        className="w-full h-full object-cover rounded-lg "
+        className="w-full h-full object-cover rounded-lg"
       />
       <div className="absolute left-5 bottom-5 w-full text-white">
-        <h2 className="font-bold text-3xl mb-5">{title}</h2>
+        <h2 className="font-bold text-3xl mb-5">Phim: ABCD</h2>
         <div className="flex items-center gap-x-3 mb-8">
           <span className="px-4 py-2 border border-white rounded-md">Abc</span>
           <span className="px-4 py-2 border border-white rounded-md">Bcd</span>
