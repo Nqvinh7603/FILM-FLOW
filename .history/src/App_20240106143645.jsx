@@ -7,9 +7,8 @@ function App() {
   return (
     <Fragment>
       <Routes>
-        <Route element={<Main></Main>}>
-          <Route path="/" element={<HomePage></HomePage>}></Route>
-        </Route>
+        <Route path="/" element={<Main></Main>}></Route>
+        <Route path="/" element={<HomePage></HomePage>}></Route>
       </Routes>
     </Fragment>
   );

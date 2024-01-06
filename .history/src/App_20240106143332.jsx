@@ -1,15 +1,12 @@
 import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
 import Main from "./components/layout/Main";
-import "swiper/scss";
-import HomePage from "./pages/HomePage";
+import "swiper/";
 function App() {
   return (
     <Fragment>
       <Routes>
-        <Route element={<Main></Main>}>
-          <Route path="/" element={<HomePage></HomePage>}></Route>
-        </Route>
+        <Route path="/" element={<Main></Main>}></Route>
       </Routes>
     </Fragment>
   );

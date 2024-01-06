@@ -7,9 +7,9 @@ function App() {
   return (
     <Fragment>
       <Routes>
-        <Route element={<Main></Main>}>
+        <Router element={<Main></Main>}>
           <Route path="/" element={<HomePage></HomePage>}></Route>
-        </Route>
+        </Router>
       </Routes>
     </Fragment>
   );

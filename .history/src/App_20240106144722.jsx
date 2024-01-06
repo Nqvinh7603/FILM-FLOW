@@ -8,6 +8,7 @@ function App() {
     <Fragment>
       <Routes>
         <Route element={<Main></Main>}>
+          <Route path="/" element={<Banner></Banner>}></Route>
           <Route path="/" element={<HomePage></HomePage>}></Route>
         </Route>
       </Routes>
