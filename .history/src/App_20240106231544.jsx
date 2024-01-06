@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Route, Routes, Router, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Main from "./components/layout/Main";
 import "swiper/scss";
 import HomePage from "./pages/HomePage";
@@ -9,7 +9,7 @@ function App() {
   return (
     <Fragment>
       <BrowserRouter>
-        <Routes>
+        <Router>
           <Route element={<Main></Main>}>
             <Route
               path="/"
@@ -22,7 +22,7 @@ function App() {
             ></Route>
             <Route path="/movies" element={<MoviePage></MoviePage>}></Route>
           </Route>
-        </Routes>
+        </Router>
       </BrowserRouter>
     </Fragment>
   );

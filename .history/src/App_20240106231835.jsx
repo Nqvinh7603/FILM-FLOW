@@ -8,7 +8,7 @@ import MoviePage from "./pages/MoviePage";
 function App() {
   return (
     <Fragment>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route element={<Main></Main>}>
             <Route
@@ -23,7 +23,7 @@ function App() {
             <Route path="/movies" element={<MoviePage></MoviePage>}></Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </Fragment>
   );
 }

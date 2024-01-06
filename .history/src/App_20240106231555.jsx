@@ -9,7 +9,7 @@ function App() {
   return (
     <Fragment>
       <BrowserRouter>
-        <Routes>
+        <Router>
           <Route element={<Main></Main>}>
             <Route
               path="/"
@@ -22,7 +22,7 @@ function App() {
             ></Route>
             <Route path="/movies" element={<MoviePage></MoviePage>}></Route>
           </Route>
-        </Routes>
+        </Router>
       </BrowserRouter>
     </Fragment>
   );

@@ -9,12 +9,7 @@ const Header = () => {
       >
         Trang chủ
       </NavLink>
-      <NavLink
-        to="/movies"
-        className={({ isActive }) => (isActive ? "text-primary" : "")}
-      >
-        Phim
-      </NavLink>
+      <NavLink to="/movies" className={({ isActive }) => (isActive ? "text-primary" : "")>Phim</NavLink>
     </header>
   );
 };
