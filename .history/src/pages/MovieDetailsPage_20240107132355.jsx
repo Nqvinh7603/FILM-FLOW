@@ -12,7 +12,7 @@ const MovieDetailsPage = () => {
   if (!data) {
     return null;
   }
-  const { backdrop_path, poster_path, title, genres } = data;
+  const { backdrop_path, poster_path, title } = data;
   return (
     <>
       <div className="w-full h-[600px] relative ">
@@ -24,28 +24,14 @@ const MovieDetailsPage = () => {
           }}
         ></div>
       </div>
-      <div className="w-full h-[400px] max-w-[800px] mx-auto -mt-[200px] relative z-10 pb-10">
+      <div className="w-full h-[400px] max-w-[800px] mx-auto -translate-y-2/4">
         <img
           src={`https://image.tmdb.org/t/p/original${poster_path}`}
           alt=""
           className="w-full h-full object-cover rounded-xl"
         />
       </div>
-      <h1 className="text-center text-3xl font-bold text-white mb-10">
-        {title}
-      </h1>
-      {genres.length > 0 && (
-        <div className="flex items-center justify-center gap-x-5 mb-10">
-          {genres.map((item) => (
-            <span
-              className="py-2 px-4 border-primary text-primary border rounded"
-              key={item.id}
-            >
-              {item.name}
-            </span>
-          ))}
-        </div>
-      )}
+      <h1>{title}</h1>
     </>
   );
 };

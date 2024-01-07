@@ -12,7 +12,7 @@ const MovieDetailsPage = () => {
   if (!data) {
     return null;
   }
-  const { backdrop_path, poster_path, title, genres } = data;
+  const { backdrop_path, poster_path, title } = data;
   return (
     <>
       <div className="w-full h-[600px] relative ">
@@ -31,21 +31,7 @@ const MovieDetailsPage = () => {
           className="w-full h-full object-cover rounded-xl"
         />
       </div>
-      <h1 className="text-center text-3xl font-bold text-white mb-10">
-        {title}
-      </h1>
-      {genres.length > 0 && (
-        <div className="flex items-center justify-center gap-x-5 mb-10">
-          {genres.map((item) => (
-            <span
-              className="py-2 px-4 border-primary text-primary border rounded"
-              key={item.id}
-            >
-              {item.name}
-            </span>
-          ))}
-        </div>
-      )}
+      <h1 className="text-center text-3xl font-bold text-white">{title}</h1>
     </>
   );
 };

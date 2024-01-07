@@ -35,10 +35,10 @@ const MovieDetailsPage = () => {
         {title}
       </h1>
       {genres.length > 0 && (
-        <div className="flex items-center justify-center gap-x-5 mb-10">
+        <div className="flex items-center gap-x-5 mb-10">
           {genres.map((item) => (
             <span
-              className="py-2 px-4 border-primary text-primary border rounded"
+              className="py-2 px-4 border-primary text-primary border"
               key={item.id}
             >
               {item.name}
