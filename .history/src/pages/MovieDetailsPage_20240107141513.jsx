@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import { apiKey, fetcher } from "../config/config";
+import translate from "google-translate-api";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();

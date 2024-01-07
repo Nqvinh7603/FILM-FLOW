@@ -9,6 +9,20 @@ const MovieDetailsPage = () => {
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`,
     fetcher
   );
+  const [translatedOverview, setTranslatedOverview] = useState(""); // State để lưu nội dung dịch
+
+  useEffect(() => {
+    if (data && data.overview) {
+      // Dịch nội dung overview khi data đã được lấy về
+      translate(data.overview, { to: "vi" })
+        .then((res) => {
+          setTranslatedOverview(res.text); // Lưu nội dung dịch vào state
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, [data]);
   if (!data) {
     return null;
   }

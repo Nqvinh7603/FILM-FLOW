@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import { apiKey, fetcher } from "../config/config";
+import translate from "google-translate-api";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -9,6 +10,20 @@ const MovieDetailsPage = () => {
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`,
     fetcher
   );
+  const [translatedOverview, setTranslatedOverview] = useState(""); // State để lưu nội dung dịch
+
+  useEffect(() => {
+    if (data && data.overview) {
+      // Dịch nội dung overview khi data đã được lấy về
+      translate(data.overview, { to: "vi" })
+        .then((res) => {
+          setTranslatedOverview(res.text); // Lưu nội dung dịch vào state
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, [data]);
   if (!data) {
     return null;
   }
@@ -47,7 +62,8 @@ const MovieDetailsPage = () => {
         </div>
       )}
       <p className="text-center text-sm leading-relaxed max-w-[600px] mx-auto mb-10">
-        {overview}
+        {translatedOverview}
+        {/* {overview} */}
       </p>
       <MovieCredits></MovieCredits>
     </div>

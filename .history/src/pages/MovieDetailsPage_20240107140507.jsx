@@ -31,7 +31,7 @@ const MovieDetailsPage = () => {
           className="w-full h-full object-cover rounded-xl"
         />
       </div>
-      <h1 className="text-center text-4xl font-bold text-white mb-10">
+      <h1 className="text-center text-3xl font-bold text-white mb-10">
         {title}
       </h1>
       {genres.length > 0 && (
@@ -69,7 +69,7 @@ function MovieCredits() {
   }
   return (
     <>
-      <h2 className="text-center text-3xl mb-10">Diễn viên</h2>
+      <h2 className="text-center text-2xl mb-10">Casts</h2>
       <div className="grid grid-cols-4 gap-5">
         {cast.slice(0, 4).map((item) => (
           <div className="cast-item" key={item.id}>

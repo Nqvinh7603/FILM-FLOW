@@ -31,7 +31,7 @@ const MovieDetailsPage = () => {
           className="w-full h-full object-cover rounded-xl"
         />
       </div>
-      <h1 className="text-center text-4xl font-bold text-white mb-10">
+      <h1 className="text-center text-3xl font-bold text-white mb-10">
         {title}
       </h1>
       {genres.length > 0 && (
@@ -49,7 +49,6 @@ const MovieDetailsPage = () => {
       <p className="text-center text-sm leading-relaxed max-w-[600px] mx-auto mb-10">
         {overview}
       </p>
-      <MovieCredits></MovieCredits>
     </div>
   );
 };
@@ -69,16 +68,15 @@ function MovieCredits() {
   }
   return (
     <>
-      <h2 className="text-center text-3xl mb-10">Diễn viên</h2>
+      <h2 className="text-center text-2xl mb-10">Casts</h2>
       <div className="grid grid-cols-4 gap-5">
-        {cast.slice(0, 4).map((item) => (
+        {cast.slice(4).map((item) => (
           <div className="cast-item" key={item.id}>
             <img
               src={`https://image.tmdb.org/t/p/original${item.profile_path}`}
               alt=""
-              className="w-full h-[350px] object-cover rounded-lg mb-3"
+              className="w-full h-[350px] object-cover rounded-lg"
             />
-            <h3 className="text-xl font-medium">{item.name}</h3>
           </div>
         ))}
       </div>
