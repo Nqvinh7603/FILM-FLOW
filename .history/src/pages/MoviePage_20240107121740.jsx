@@ -12,15 +12,15 @@ const MoviePage = () => {
   const movies = data?.results || [];
   return (
     <div className="py-10 page-container">
-      <div className="flex mb-10">
+      <div className="flex">
         <div className="flex-1">
           <input
-            className="w-full p-4 bg-slate-800 text-white outline-none"
+            className="w-full p-4 bg-transparent"
             type="text"
             placeholder="Nhập phim bạn muốn xem..."
           />
         </div>
-        <button className="p-4 bg-primary text-white">
+        <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

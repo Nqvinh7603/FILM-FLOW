@@ -15,7 +15,7 @@ const MoviePage = () => {
       <div className="flex mb-10">
         <div className="flex-1">
           <input
-            className="w-full p-4 bg-slate-800 text-white outline-none"
+            className="w-full p-4 bg-slate-800 outline-none"
             type="text"
             placeholder="Nhập phim bạn muốn xem..."
           />
