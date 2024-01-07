@@ -143,7 +143,7 @@ function MovieSimilar() {
   }
   return (
     <div className="py-10">
-      <h2 className="text-3xl font-medium mb-10">Các phim tương tự </h2>
+      <h2 className="text-3xl font-medium">Các phim tương tự </h2>
       <div className="movie-list">
         <Swiper grabCursor={true} spaceBetween={40} slidesPerView={"auto"}>
           {results.length > 0 &&

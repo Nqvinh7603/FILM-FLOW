@@ -2,9 +2,7 @@ import React, { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import { apiKey, fetcher } from "../config/config";
-import { SwiperSlide, Swiper } from "swiper/react";
-import "swiper/scss";
-import MovieCards from "../components/movie/MovieCards";
+
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { data, error } = useSWR(
@@ -53,7 +51,6 @@ const MovieDetailsPage = () => {
       </p>
       <MovieCredits></MovieCredits>
       <MovieVideos></MovieVideos>
-      <MovieSimilar></MovieSimilar>
     </div>
   );
 };
@@ -128,32 +125,9 @@ function MovieVideos() {
   );
 }
 function MovieSimilar() {
-  const { movieId } = useParams();
-  const { data, error } = useSWR(
-    `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}`,
-    fetcher
-  );
-
-  if (!data) {
-    return null;
-  }
-  const { results } = data;
-  if (!results || results.length <= 0) {
-    return null;
-  }
   return (
     <div className="py-10">
-      <h2 className="text-3xl font-medium mb-10">Các phim tương tự </h2>
-      <div className="movie-list">
-        <Swiper grabCursor={true} spaceBetween={40} slidesPerView={"auto"}>
-          {results.length > 0 &&
-            results.map((item) => (
-              <SwiperSlide key={item.id}>
-                <MovieCards item={item}></MovieCards>
-              </SwiperSlide>
-            ))}
-        </Swiper>
-      </div>
+      <h2 className="text-">Các phim tương tự </h2>
     </div>
   );
 }

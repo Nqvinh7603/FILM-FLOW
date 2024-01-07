@@ -8,7 +8,6 @@ export default {
       },
       colors: {
         primary: "#3B82F6",
-        secondary: "#e11d48",
       },
     },
   },
