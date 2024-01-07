@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply bg-slate-900 font-body px-5;
+  }
+}
+@layer components {
+  .page-container {
+    max-width: 800px;
+    @apply mx-auto;
+  }
+  .page-container-fluid {
+    max-width: 1440px;
+    @apply mx-auto;
+  }
+}
