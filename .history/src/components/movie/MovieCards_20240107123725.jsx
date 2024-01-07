@@ -17,10 +17,7 @@ const MovieCards = ({ item }) => {
           <span>{new Date(release_date).getFullYear()}</span>
           <span>{vote_average}</span>
         </div>
-        <button
-          onClick={() => navigate(`/movie/${id}`)}
-          className=" py-3 px-6 rounded-lg capitalize bg-primary w-full mt-auto"
-        >
+        <button onClick={() => } className=" py-3 px-6 rounded-lg capitalize bg-primary w-full mt-auto">
           Xem phim
         </button>
       </div>

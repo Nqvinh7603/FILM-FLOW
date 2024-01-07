@@ -18,7 +18,7 @@ const MovieCards = ({ item }) => {
           <span>{vote_average}</span>
         </div>
         <button
-          onClick={() => navigate(`/movie/${id}`)}
+          onClick={() => navigate()}
           className=" py-3 px-6 rounded-lg capitalize bg-primary w-full mt-auto"
         >
           Xem phim
