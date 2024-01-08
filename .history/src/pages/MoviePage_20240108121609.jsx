@@ -88,7 +88,7 @@ const MoviePage = () => {
           1
         </span>
 
-        <span className="cursor-pointer">
+        <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

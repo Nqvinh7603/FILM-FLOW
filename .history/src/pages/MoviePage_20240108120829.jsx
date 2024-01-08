@@ -67,43 +67,10 @@ const MoviePage = () => {
             <MovieCards key={item.id} item={item}></MovieCards>
           ))}
       </div>
-      <div className="flex items-center justify-center mt-10 gap-x-5">
-        <span className="cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
-            />
-          </svg>
-        </span>
-        <span className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900">
-          1
-        </span>
-
-        <span className="cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
-            />
-          </svg>
-        </span>
+      <div className="flex items-center justify-center">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   );
