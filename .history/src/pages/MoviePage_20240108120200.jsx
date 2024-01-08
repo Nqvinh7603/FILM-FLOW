@@ -11,7 +11,7 @@ const MoviePage = () => {
   const [url, setUrl] = useState(
     "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
   );
-  const filterDebounce = useDebounce(filter, 1000);
+  const filterDebounce = useDebounce(filter, 500);
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
@@ -57,12 +57,9 @@ const MoviePage = () => {
           </svg>
         </button>
       </div>
-      {loading && (
-        <div className="w-10 h-10 rounded-full border-4 border-primary border-t-transparent border-t-4 mx-auto animate-spin"></div>
-      )}
+      {loding && <div></div>}
       <div className="grid grid-cols-4 gap-10">
-        {!loading &&
-          movies.length > 0 &&
+        {movies.length > 0 &&
           movies.map((item) => (
             <MovieCards key={item.id} item={item}></MovieCards>
           ))}
