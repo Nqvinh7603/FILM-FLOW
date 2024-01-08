@@ -25,7 +25,7 @@ const MoviePage = () => {
       );
     } else {
       setUrl(
-        `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}`
+        "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
       );
     }
   }, [filterDebounce, nextPage]);
@@ -33,7 +33,7 @@ const MoviePage = () => {
     return null;
   }
   const movies = data?.results || [];
-  const { page, total_pages } = data;
+  const { page, total_pages, results: movies } = data;
   return (
     <div className="py-10 page-container">
       <div className="flex mb-10">

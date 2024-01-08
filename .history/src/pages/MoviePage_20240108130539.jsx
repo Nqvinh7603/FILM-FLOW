@@ -25,7 +25,7 @@ const MoviePage = () => {
       );
     } else {
       setUrl(
-        `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}`
+        "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
       );
     }
   }, [filterDebounce, nextPage]);
@@ -93,15 +93,12 @@ const MoviePage = () => {
           </svg>
         </span>
         {new Array(pageCount).fill(0).map((item, index) => {
-          return (
-            <span
-              className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900"
-              onClick={() => setNextPage(index + 1)}
-              key={index}
-            >
-              {index + 1}
-            </span>
-          );
+          <span
+            className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900"
+            onClick={() => setNextPage(index + 1)}
+          >
+            {index + 1}
+          </span>;
         })}
 
         <span className="cursor-pointer">
