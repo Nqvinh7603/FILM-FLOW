@@ -18,13 +18,7 @@ const MoviePage = () => {
   const { data } = useSWR(url, fetcher);
   useEffect(() => {
     if (filterDebounce) {
-      setUrl(
-        `https://api.themoviedb.org/3/search/movie?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&query=${filterDebounce}`
-      );
-    } else {
-      setUrl(
-        "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
-      );
+      setUrl;
     }
   }, [filterDebounce]);
   const movies = data?.results || [];

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MovieList from "../components/movie/MovieList";
 import useSWR from "swr";
 import { fetcher } from "../config/config";
@@ -8,25 +8,15 @@ import useDebounce from "../hook/useDebounce";
 
 const MoviePage = () => {
   const [filter, setFilter] = useState("");
-  const [url, setUrl] = useState(
-    "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
-  );
+  const [url, setUrl] = useState();
   const filterDebounce = useDebounce(filter, 500);
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
-  const { data } = useSWR(url, fetcher);
-  useEffect(() => {
-    if (filterDebounce) {
-      setUrl(
-        `https://api.themoviedb.org/3/search/movie?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&query=${filterDebounce}`
-      );
-    } else {
-      setUrl(
-        "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
-      );
-    }
-  }, [filterDebounce]);
+  const { data } = useSWR(
+    `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a`,
+    fetcher
+  );
   const movies = data?.results || [];
   return (
     <div className="py-10 page-container">
