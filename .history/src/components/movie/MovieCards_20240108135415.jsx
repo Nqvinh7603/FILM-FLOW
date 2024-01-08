@@ -18,9 +18,7 @@ const MovieCards = ({ item }) => {
           <span>{new Date(release_date).getFullYear()}</span>
           <span>{vote_average}</span>
         </div>
-        <Button onClick={() => navigate(`/movie/${id}`)} full>
-          Xem phim
-        </Button>
+        <Button>Xem phim</Button>
       </div>
     </div>
   );
