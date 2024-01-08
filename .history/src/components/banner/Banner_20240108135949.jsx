@@ -42,9 +42,10 @@ function BannerItem({ item }) {
           <span className="px-4 py-2 border border-white rounded-md">Bcd</span>
           <span className="px-4 py-2 border border-white rounded-md">Def</span>
         </div>
-        <Button onClick={() => navigate(`/movie/${id}`)} className="w-auto">
+        <Button onClick={() => navigate(`/movie/${id}`)}></Button>
+        <button className="py-3 px-6 rounded-lg bg-primary text-white font-medium">
           Xem phim
-        </Button>
+        </button>
       </div>
     </div>
   );
