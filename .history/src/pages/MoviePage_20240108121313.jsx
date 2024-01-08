@@ -68,7 +68,7 @@ const MoviePage = () => {
           ))}
       </div>
       <div className="flex items-center justify-center mt-10 gap-x-5">
-        <span className="cursor-pointer">
+        <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -84,11 +84,9 @@ const MoviePage = () => {
             />
           </svg>
         </span>
-        <span className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900">
-          1
-        </span>
+        <span className="cursor-pointer inline-block p-3">1</span>
 
-        <span className="cursor-pointer">
+        <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
