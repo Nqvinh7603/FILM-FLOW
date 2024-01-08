@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
+import MovieList from "../components/movie/MovieList";
 import useSWR from "swr";
 import { fetcher } from "../config/config";
 import MovieCards from "../components/movie/MovieCards";
 import { useState } from "react";
 import useDebounce from "../hook/useDebounce";
-import ReactPaginate from "react-paginate";
-const itemsPerPage = 20;
+
 const MoviePage = () => {
   const [nextPage, setNextPage] = useState(1);
   const [filter, setFilter] = useState("");
   const [url, setUrl] = useState(
     `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}`
   );
-  const filterDebounce = useDebounce(filter, 500);
+  const filterDebounce = useDebounce(filter, 1000);
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
@@ -25,19 +25,15 @@ const MoviePage = () => {
       );
     } else {
       setUrl(
-        `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}`
+        "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
       );
     }
   }, [filterDebounce, nextPage]);
+  if (!data) {
+    return null;
+  }
   const movies = data?.results || [];
-  const [itemOffset, setItemOffset] = useState(0);
-  if (!data || !data.total_results) return;
-  const pageCount = Math.ceil(data.total_results / itemsPerPage);
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.total_pages;
-    setItemOffset(newOffset);
-    setNextPage(event.selected + 1);
-  };
+  const [page, total_pages] = data;
   return (
     <div className="py-10 page-container">
       <div className="flex mb-10">
@@ -76,17 +72,41 @@ const MoviePage = () => {
             <MovieCards key={item.id} item={item}></MovieCards>
           ))}
       </div>
-      <div className="mt-10">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-          className="pagination"
-        />
+      <div className="flex items-center justify-center mt-10 gap-x-5">
+        <span className="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
+            />
+          </svg>
+        </span>
+        <span className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900">
+          1
+        </span>
+
+        <span className="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </span>
       </div>
     </div>
   );

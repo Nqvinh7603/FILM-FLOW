@@ -31,7 +31,7 @@ const MoviePage = () => {
   }, [filterDebounce, nextPage]);
   const movies = data?.results || [];
   const [itemOffset, setItemOffset] = useState(0);
-  if (!data || !data.total_results) return;
+  if (!data || !data.total_pages) return;
   const pageCount = Math.ceil(data.total_results / itemsPerPage);
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.total_pages;
