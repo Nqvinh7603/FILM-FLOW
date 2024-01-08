@@ -9,9 +9,8 @@ const pageCount = 5;
 const MoviePage = () => {
   const [nextPage, setNextPage] = useState(1);
   const [filter, setFilter] = useState("");
-  //https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}
   const [url, setUrl] = useState(
-    "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}"
+    `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}`
   );
   const filterDebounce = useDebounce(filter, 500);
   const handleFilterChange = (e) => {
@@ -26,7 +25,7 @@ const MoviePage = () => {
       );
     } else {
       setUrl(
-        "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
+        `https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}`
       );
     }
   }, [filterDebounce, nextPage]);
@@ -35,8 +34,6 @@ const MoviePage = () => {
   }
   const movies = data?.results || [];
   const [page, total_pages] = data;
-  console.log(page);
-  console.log(total_pages);
   return (
     <div className="py-10 page-container">
       <div className="flex mb-10">
@@ -76,10 +73,7 @@ const MoviePage = () => {
           ))}
       </div>
       <div className="flex items-center justify-center mt-10 gap-x-5">
-        <span
-          className="cursor-pointer"
-          onClick={() => setNextPage(nextPage - 1)}
-        >
+        <span className="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -112,7 +106,7 @@ const MoviePage = () => {
             strokeWidth="1.5"
             stroke="currentColor"
             className="w-6 h-6"
-            onClick={() => setNextPage(nextPage + 1)}
+            onClick={{} => setNextPage()}
           >
             <path
               strokeLinecap="round"

@@ -29,6 +29,7 @@ const MoviePage = () => {
         "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
       );
     }
+    //[filterDebounce, nextPage]);
   }, [filterDebounce, nextPage]);
   if (!data) {
     return null;

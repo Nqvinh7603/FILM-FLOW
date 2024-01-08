@@ -7,11 +7,11 @@ import { useState } from "react";
 import useDebounce from "../hook/useDebounce";
 const pageCount = 5;
 const MoviePage = () => {
-  const [nextPage, setNextPage] = useState(1);
+  // const [nextPage, setNextPage] = useState(1);
   const [filter, setFilter] = useState("");
   //https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}
   const [url, setUrl] = useState(
-    "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}"
+    "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
   );
   const filterDebounce = useDebounce(filter, 500);
   const handleFilterChange = (e) => {
@@ -22,14 +22,15 @@ const MoviePage = () => {
   useEffect(() => {
     if (filterDebounce) {
       setUrl(
-        `https://api.themoviedb.org/3/search/movie?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&query=${filterDebounce}&page=${nextPage}`
+        `https://api.themoviedb.org/3/search/movie?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&query=${filterDebounce}`
       );
     } else {
       setUrl(
         "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
       );
     }
-  }, [filterDebounce, nextPage]);
+    //[filterDebounce, nextPage]);
+  }, [filterDebounce]);
   if (!data) {
     return null;
   }

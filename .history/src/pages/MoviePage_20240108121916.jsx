@@ -5,15 +5,13 @@ import { fetcher } from "../config/config";
 import MovieCards from "../components/movie/MovieCards";
 import { useState } from "react";
 import useDebounce from "../hook/useDebounce";
-const pageCount = 5;
+
 const MoviePage = () => {
-  const [nextPage, setNextPage] = useState(1);
   const [filter, setFilter] = useState("");
-  //https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}
   const [url, setUrl] = useState(
-    "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&page=${nextPage}"
+    "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
   );
-  const filterDebounce = useDebounce(filter, 500);
+  const filterDebounce = useDebounce(filter, 1000);
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
@@ -22,21 +20,16 @@ const MoviePage = () => {
   useEffect(() => {
     if (filterDebounce) {
       setUrl(
-        `https://api.themoviedb.org/3/search/movie?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&query=${filterDebounce}&page=${nextPage}`
+        `https://api.themoviedb.org/3/search/movie?api_key=dae28cb2a8dbebf72e0eacb8a51b947a&query=${filterDebounce}`
       );
     } else {
       setUrl(
         "https://api.themoviedb.org/3/movie/popular?api_key=dae28cb2a8dbebf72e0eacb8a51b947a"
       );
     }
-  }, [filterDebounce, nextPage]);
-  if (!data) {
-    return null;
-  }
+  }, [filterDebounce]);
   const movies = data?.results || [];
   const [page, total_pages] = data;
-  console.log(page);
-  console.log(total_pages);
   return (
     <div className="py-10 page-container">
       <div className="flex mb-10">
@@ -76,10 +69,7 @@ const MoviePage = () => {
           ))}
       </div>
       <div className="flex items-center justify-center mt-10 gap-x-5">
-        <span
-          className="cursor-pointer"
-          onClick={() => setNextPage(nextPage - 1)}
-        >
+        <span className="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -95,14 +85,9 @@ const MoviePage = () => {
             />
           </svg>
         </span>
-        {new Array(pageCount).fill(0).map((item, index) => {
-          <span
-            className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900 "
-            onClick={() => setNextPage(index + 1)}
-          >
-            {index + 1}
-          </span>;
-        })}
+        <span className="cursor-pointer inline-block py-2 px-4 rounded-full leading-none bg-white text-slate-900">
+          1
+        </span>
 
         <span className="cursor-pointer">
           <svg
@@ -112,7 +97,6 @@ const MoviePage = () => {
             strokeWidth="1.5"
             stroke="currentColor"
             className="w-6 h-6"
-            onClick={() => setNextPage(nextPage + 1)}
           >
             <path
               strokeLinecap="round"
