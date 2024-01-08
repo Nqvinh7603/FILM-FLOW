@@ -85,7 +85,6 @@ const MoviePage = () => {
           pageCount={pageCount}
           previousLabel="< previous"
           renderOnZeroPageCount={null}
-          className="pagination"
         />
       </div>
     </div>

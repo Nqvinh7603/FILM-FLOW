@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import MovieList from "../components/movie/MovieList";
 import useSWR from "swr";
 import { fetcher } from "../config/config";
 import MovieCards from "../components/movie/MovieCards";
@@ -6,6 +7,7 @@ import { useState } from "react";
 import useDebounce from "../hook/useDebounce";
 import ReactPaginate from "react-paginate";
 const itemsPerPage = 20;
+const pageCount = 5;
 const MoviePage = () => {
   const [nextPage, setNextPage] = useState(1);
   const [filter, setFilter] = useState("");
@@ -33,6 +35,8 @@ const MoviePage = () => {
   const [itemOffset, setItemOffset] = useState(0);
   if (!data || !data.total_pages) return;
   const pageCount = Math.ceil(data.total_pages / itemsPerPage);
+
+  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.total_pages;
     setItemOffset(newOffset);
@@ -85,7 +89,6 @@ const MoviePage = () => {
           pageCount={pageCount}
           previousLabel="< previous"
           renderOnZeroPageCount={null}
-          className="pagination"
         />
       </div>
     </div>

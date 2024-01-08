@@ -33,6 +33,8 @@ const MoviePage = () => {
   const [itemOffset, setItemOffset] = useState(0);
   if (!data || !data.total_pages) return;
   const pageCount = Math.ceil(data.total_pages / itemsPerPage);
+
+  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.total_pages;
     setItemOffset(newOffset);
@@ -85,7 +87,6 @@ const MoviePage = () => {
           pageCount={pageCount}
           previousLabel="< previous"
           renderOnZeroPageCount={null}
-          className="pagination"
         />
       </div>
     </div>
