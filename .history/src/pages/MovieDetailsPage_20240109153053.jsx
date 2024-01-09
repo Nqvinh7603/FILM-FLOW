@@ -142,7 +142,6 @@ function MovieSimilar() {
   if (!results || results.length <= 0) {
     return null;
   }
-  //test
   return (
     <div className="py-10">
       <h2 className="text-3xl font-medium mb-10">Các phim tương tự </h2>
