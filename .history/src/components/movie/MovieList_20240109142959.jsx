@@ -8,7 +8,7 @@ import { fetcher, tmdbAPI } from "../../config/config";
 //https://api.themoviedb.org/3/movie/now_playing?api_key=dae28cb2a8dbebf72e0eacb8a51b947a
 const MovieList = ({ type = "now_playing" }) => {
   const { data } = useSWR(
-    tmdbAPI.getMovieList(type),
+    tmdbAPI.getMovieList,
     fetcher
   );
   const movies = data?.results || [];

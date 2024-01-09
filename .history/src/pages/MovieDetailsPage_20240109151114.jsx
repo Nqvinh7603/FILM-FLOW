@@ -29,7 +29,7 @@ const MovieDetailsPage = () => {
       </div>
       <div className="w-full h-[400px] max-w-[800px] mx-auto -mt-[200px] relative z-10 pb-10">
         <img
-          src={`https://image.tmdb.org/t/p/original${poster_path}`}
+          src={tmdbAPI.imageOriginal("item.poster_path")}
           alt=""
           className="w-full h-full object-cover rounded-xl"
         />
@@ -79,7 +79,7 @@ function MovieCredits() {
         {cast.slice(0, 4).map((item) => (
           <div className="cast-item" key={item.id}>
             <img
-              src={tmdbAPI.getImageOriginal(item.profile_path)}
+              src={tmdbAPI.imageOriginal("item.profiles_path")}
               alt=""
               className="w-full h-[350px] object-cover rounded-lg mb-3"
             />
