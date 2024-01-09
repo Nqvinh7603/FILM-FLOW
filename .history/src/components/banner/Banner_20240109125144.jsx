@@ -38,9 +38,9 @@ function BannerItem({ item }) {
       <div className="absolute left-5 bottom-5 w-full text-white">
         <h2 className="font-bold text-3xl mb-5">{title}</h2>
         <div className="flex items-center gap-x-3 mb-8">
-          <span className="px-4 py-2 border border-white rounded-md">Hành Động</span>
-          <span className="px-4 py-2 border border-white rounded-md">Kinh Dị</span>
-          <span className="px-4 py-2 border border-white rounded-md">Tình Cảm</span>
+          <span className="px-4 py-2 border border-white rounded-md">hành động</span>
+          <span className="px-4 py-2 border border-white rounded-md">Bcd</span>
+          <span className="px-4 py-2 border border-white rounded-md">Def</span>
         </div>
         <Button onClick={() => navigate(`/movie/${id}`)}>
           Xem phim
