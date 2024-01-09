@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
-import { apiKey, fetcher, tmdbAPI } from "../config/config";
+import { apiKey, fetcher } from "../config/config";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/scss";
 import MovieCards from "../components/movie/MovieCards";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { data, error } = useSWR(
-    tmdbAPI.getMovieList(movieId),
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`,
     fetcher
   );
   if (!data) {
