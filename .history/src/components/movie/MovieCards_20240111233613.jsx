@@ -46,6 +46,7 @@ function FallbackComponent() {
 export default withErrorBoundary(MovieCard, {
   FallbackComponent,
 });
+
 export const MovieCardSkeleton = () => {
   return (
     <div className="movie-card flex flex-col rounded-lg p-3 bg-slate-800 text-white h-full select-none">
@@ -76,3 +77,4 @@ export const MovieCardSkeleton = () => {
     </div>
   );
 };
+export default MovieCards;
