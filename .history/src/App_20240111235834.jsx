@@ -1,5 +1,5 @@
-import { Fragment, lazy, Suspense} from "react";
-import { Route, Routes, Router, BrowserRouter} from "react-router-dom";
+import { Fragment } from "react";
+import { Route, Routes, Router, BrowserRouter } from "react-router-dom";
 import Main from "./components/layout/Main";
 import "swiper/scss";
 // import HomePage from "./pages/HomePage";
@@ -8,11 +8,11 @@ import MoviePage from "./pages/MoviePage";
 //import MovieDetailsPage from "./pages/MovieDetailsPage";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"));
-//const MoviePageV2 = lazy(() => import("./pages/MoviePageV2"));
+const MoviePageV2 = lazy(() => import("./pages/MoviePageV2"));
 function App() {
   return (
     <Fragment>
-    <BrowserRouter> <Suspense fallback={<></>}>
+      <Suspense fallback={<></>}>
         <Routes>
           <Route element={<Main></Main>}>
             <Route
@@ -32,7 +32,6 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-      </BrowserRouter>
     </Fragment>
   );
 }

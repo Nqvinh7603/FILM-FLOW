@@ -2,9 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 import { tmdbAPI } from "../../config/config";
-import LoadingSkeleton from "../../loading/LoadingSkeleton";
-import PropTypes from "prop-types";
-import { withErrorBoundary } from "react-error-boundary";
+
 const MovieCards = ({ item }) => {
   const { title, vote_average, release_date, poster_path, id } = item;
   const navigate = useNavigate();

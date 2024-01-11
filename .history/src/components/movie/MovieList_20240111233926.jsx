@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/scss";
-// import MovieCards from "./MovieCards";
-import MovieCards, { MovieCardSkeleton } from "./MovieCards";
+import MovieCards from "./MovieCards";
 import useSWR from "swr";
 import { fetcher, tmdbAPI } from "../../config/config";
-import PropTypes from "prop-types";
-import { withErrorBoundary } from "react-error-boundary";
 //https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
 //https://api.themoviedb.org/3/movie/now_playing?api_key=dae28cb2a8dbebf72e0eacb8a51b947a
 const MovieList = ({ type = "now_playing" }) => {
@@ -41,7 +38,7 @@ const MovieList = ({ type = "now_playing" }) => {
           {movies.length > 0 &&
             movies.map((item) => (
               <SwiperSlide key={item.id}>
-                <MovieCards item={item}></MovieCards>
+                <MovieCard item={item}></MovieCard>
               </SwiperSlide>
             ))}
         </Swiper>

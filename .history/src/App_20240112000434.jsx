@@ -31,8 +31,7 @@ function App() {
             ></Route>
           </Route>
         </Routes>
-      </Suspense>
-      </BrowserRouter>
+      </Suspense></BrowserRouter>
     </Fragment>
   );
 }

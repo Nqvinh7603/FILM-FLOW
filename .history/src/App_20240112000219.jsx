@@ -12,7 +12,7 @@ const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"));
 function App() {
   return (
     <Fragment>
-    <BrowserRouter> <Suspense fallback={<></>}>
+      <Suspense fallback={<></>}>
         <Routes>
           <Route element={<Main></Main>}>
             <Route
@@ -32,7 +32,6 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-      </BrowserRouter>
     </Fragment>
   );
 }
