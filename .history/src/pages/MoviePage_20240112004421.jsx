@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
 import useSWR from "swr";
-import { fetcher, tmdbAPI } from "../config/config";
-import MovieCards, { MovieCardSkeleton } from "../components/movie/MovieCards";
+import { fetcher } from "../config/config";
+import MovieCards from "../components/movie/MovieCards";
 import { useState } from "react";
 import useDebounce from "../hook/useDebounce";
+import ReactPaginate from "react-paginate";
 import Button from "../components/button/Button";
 import useSWRInfinite from "swr/infinite";
-import ReactPaginate from "react-paginate";
-import { v4 } from "uuid";
 const itemsPerPage = 20;
 const MoviePage = () => {
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
   const [nextPage, setNextPage] = useState(1);
   const [filter, setFilter] = useState("");
   const [url, setUrl] = useState(tmdbAPI.getMovieList("popular", nextPage));
@@ -82,7 +79,6 @@ const MoviePage = () => {
         <div className="grid grid-cols-4 gap-10">
           {new Array(itemsPerPage).fill(0).map(() => (
             <MovieCardSkeleton key={v4()}></MovieCardSkeleton>
-            
           ))}
         </div>
       )}
@@ -111,7 +107,7 @@ const MoviePage = () => {
           disabled={isReachingEnd}
           className={`${isReachingEnd ? "bg-slate-300" : ""}`}
         >
-          Tải thêm
+          Load more
       </Button>
       </div>
     </div>

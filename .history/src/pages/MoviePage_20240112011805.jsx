@@ -111,7 +111,7 @@ const MoviePage = () => {
           disabled={isReachingEnd}
           className={`${isReachingEnd ? "bg-slate-300" : ""}`}
         >
-          Tải thêm
+          Load more
       </Button>
       </div>
     </div>

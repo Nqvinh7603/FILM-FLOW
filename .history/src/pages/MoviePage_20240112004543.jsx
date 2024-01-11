@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+// import React, { useEffect, useState } from "react";
 import useSWR from "swr";
-import { fetcher, tmdbAPI } from "../config/config";
-import MovieCards, { MovieCardSkeleton } from "../components/movie/MovieCards";
-import { useState } from "react";
-import useDebounce from "../hook/useDebounce";
-import Button from "../components/button/Button";
-import useSWRInfinite from "swr/infinite";
+import MovieCard, { MovieCardSkeleton } from "components/movie/MovieCard";
+import { fetcher, tmdbAPI } from "apiConfig/config";
+import useDebounce from "hooks/useDebounce";
 import ReactPaginate from "react-paginate";
 import { v4 } from "uuid";
+import Button from "components/button/Button";
+import useSWRInfinite from "swr/infinite";
 const itemsPerPage = 20;
+
 const MoviePage = () => {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -31,9 +31,7 @@ const MoviePage = () => {
   console.log("MoviePage ~ isReachingEnd", isReachingEnd);
   useEffect(() => {
     if (filterDebounce) {
-      setUrl(
-        tmdbAPI.getMovieSearch(filterDebounce, nextPage)
-      );
+      setUrl(tmdbAPI.getMovieSearch(filterDebounce, nextPage));
     } else {
       setUrl(tmdbAPI.getMovieList("popular", nextPage));
     }
@@ -52,25 +50,25 @@ const MoviePage = () => {
       <div className="flex mb-10">
         <div className="flex-1">
           <input
-            className="w-full p-4 bg-slate-800 text-white outline-none"
             type="text"
-            placeholder="Nhập phim bạn muốn xem..."
+            className="w-full p-4 bg-slate-800 text-white outline-none"
+            placeholder="Type here to search..."
             onChange={handleFilterChange}
           />
         </div>
         <button className="p-4 bg-primary text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              strokeWidth="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
         </button>
@@ -82,7 +80,6 @@ const MoviePage = () => {
         <div className="grid grid-cols-4 gap-10">
           {new Array(itemsPerPage).fill(0).map(() => (
             <MovieCardSkeleton key={v4()}></MovieCardSkeleton>
-            
           ))}
         </div>
       )}
@@ -90,8 +87,17 @@ const MoviePage = () => {
         {!loading &&
           movies.length > 0 &&
           movies.map((item) => (
-            <MovieCards key={item.id} item={item}></MovieCards>
+            <MovieCard key={item.id} item={item}></MovieCard>
           ))}
+      </div>
+      <div className="mt-10 text-center">
+        <Button
+          onClick={() => (isReachingEnd ? {} : setSize(size + 1))}
+          disabled={isReachingEnd}
+          className={`${isReachingEnd ? "bg-slate-300" : ""}`}
+        >
+          Load more
+        </Button>
       </div>
       {/* <div className="mt-10">
         <ReactPaginate
@@ -105,15 +111,6 @@ const MoviePage = () => {
           className="pagination"
         />
       </div> */}
-      <div className="mt-10 text-center">
-      <Button
-      onClick={() => (isReachingEnd ? {} : setSize(size + 1))}
-          disabled={isReachingEnd}
-          className={`${isReachingEnd ? "bg-slate-300" : ""}`}
-        >
-          Tải thêm
-      </Button>
-      </div>
     </div>
   );
 };

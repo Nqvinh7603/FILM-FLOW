@@ -7,7 +7,6 @@ const Button = ({
   type = "button",
   bgColor = "primary",
   children,
-  ...props
 }) => {
   let bgClassName = "bg-primary";
   switch (bgColor) {
@@ -23,7 +22,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      className={`py-3 px-6 rounded-lg capitalize mt-auto ${
+      className={`py-3 px-6 rounded-lg capitalize  ${
         full ? "w-full" : ""
       } ${bgClassName} ${className}`}
       {...props}

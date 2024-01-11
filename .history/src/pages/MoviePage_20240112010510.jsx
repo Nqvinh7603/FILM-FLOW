@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useSWR from "swr";
 import { fetcher, tmdbAPI } from "../config/config";
-import MovieCards, { MovieCardSkeleton } from "../components/movie/MovieCards";
+import MovieCards from "../components/movie/MovieCards";
 import { useState } from "react";
 import useDebounce from "../hook/useDebounce";
 import Button from "../components/button/Button";
@@ -81,8 +81,7 @@ const MoviePage = () => {
       {loading && (
         <div className="grid grid-cols-4 gap-10">
           {new Array(itemsPerPage).fill(0).map(() => (
-            <MovieCardSkeleton key={v4()}></MovieCardSkeleton>
-            
+            <LodingCardSkeleton key={v4()}></LodingCardSkeleton>
           ))}
         </div>
       )}
@@ -111,7 +110,7 @@ const MoviePage = () => {
           disabled={isReachingEnd}
           className={`${isReachingEnd ? "bg-slate-300" : ""}`}
         >
-          Tải thêm
+          Load more
       </Button>
       </div>
     </div>

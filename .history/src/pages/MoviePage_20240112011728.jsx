@@ -81,9 +81,9 @@ const MoviePage = () => {
       {loading && (
         <div className="grid grid-cols-4 gap-10">
           {new Array(itemsPerPage).fill(0).map(() => (
-            <MovieCardSkeleton key={v4()}></MovieCardSkeleton>
+            <MovieCardSkeleton key={v4()></MovieCardSkeleton>
             
-          ))}
+          }
         </div>
       )}
       <div className="grid grid-cols-4 gap-10">
@@ -111,7 +111,7 @@ const MoviePage = () => {
           disabled={isReachingEnd}
           className={`${isReachingEnd ? "bg-slate-300" : ""}`}
         >
-          Tải thêm
+          Load more
       </Button>
       </div>
     </div>
